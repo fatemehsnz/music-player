@@ -1,9 +1,10 @@
 import React from 'react'
-import { Box,Button,Chip,Divider,InputBase, Paper, Stack } from '@mui/material'
+import { AppBar, Box,Button,Chip,CssBaseline,Divider,InputBase, Paper, Stack, Toolbar, Typography } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import { createTheme, ThemeProvider } from "@mui/material";
 import TuneIcon from '@mui/icons-material/Tune';
 import { styled } from '@mui/material/styles';
+import logo from '../assests/logo.png'
 const theme = createTheme ()
 
 
@@ -16,7 +17,8 @@ const paper ={
     width : 1000,
     backgroundColor:'#0f0f0f',
     borderRadius : 3,
-    margin: 5,
+    mt: 2,mb:2,
+    mr:10,
     // p: '2px 10px',
     color: 'white',
 
@@ -55,31 +57,48 @@ const filter={
 const Header = () => {
   return (
     <ThemeProvider theme={theme}>
-    <div>
-      <Stack flexDirection='row'  sx={{backgroundColor :'#111', color:'white'}}>
-        <Paper sx={paper}>
-          <Stack flexDirection='row' alignItems='center'>
-            <SearchIcon sx={{ml:1}}/>
-            <InputBase placeholder='جستجو...' sx={{color: 'white',fontFamily:'msi',fontSize:15}}></InputBase>
-          </Stack>
-          <Stack flexDirection='row' >
-            <Chip clickable label='آواز' sx={chip}/>
-            <Chip clickable label="ایرانی" sx={chip}/>
-            <Chip clickable label="سنتی" sx={chip}/>
-            <Divider sx={{ height: 25, borderColor:'white',display:'flex'}} orientation="vertical" />
-            <Chip clickable sx={filter} icon={<TuneIcon sx={{'&.MuiChip-icon':{color:'white', mr:1,}}}/> }  label="فیلتر" />
-          </Stack>
-        </Paper>
-        <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width : 200,margin: 5,color: 'white',}}>
-        <CustomButton variant="contained" disableRipple>
-          ورود
-        </CustomButton>
-        <CustomButton variant="contained" disableRipple>
-          ثبت‌نام
-        </CustomButton>
-        </Paper>
-      </Stack>
-    </div>
+      <div>
+        {/* <Box sx={{ display: 'flex' }}> */}
+          {/* <CssBaseline /> */}
+          <AppBar component="nav" position='sticky' sx={{}}>
+            <Toolbar sx={{backgroundColor :'#111', color:'white'}}>
+              <Box  sx={{display:'flex',flexDirection:'column' ,alignItems:'center' ,pt:3, mr:2}}>
+                <Box
+                      component="img"
+                      sx={{
+                        height: '70px'
+                      }}
+                      alt="Your logo."
+                      src={logo}
+                />
+                <Typography sx={{fontSize:'1.2em' ,fontWeight:600,color:'white'}}>PLAYER</Typography>
+                <Typography sx={{fontSize:'0.5em' ,letterSpacing:2,fontWeight:300}}>music player</Typography>
+              </Box>
+              <Paper sx={paper}>
+                <Stack flexDirection='row' alignItems='center'>
+                  <SearchIcon sx={{ml:1}}/>
+                  <InputBase placeholder='جستجو...' sx={{fontFamily:'msi',fontSize:15,color:'white'}}></InputBase>
+                </Stack>
+                <Stack flexDirection='row' >
+                  <Chip clickable label='آواز' sx={chip}/>
+                  <Chip clickable label="ایرانی" sx={chip}/>
+                  <Chip clickable label="سنتی" sx={chip}/>
+                  <Divider sx={{ height: 25, borderColor:'white',display:'flex'}} orientation="vertical" />
+                  <Chip clickable sx={filter} icon={<TuneIcon sx={{'&.MuiChip-icon':{color:'white', mr:1,}}}/> }  label="فیلتر" />
+                </Stack>
+              </Paper>
+              <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width : 200,color: 'white',mr:20}}>
+              <CustomButton variant="contained" disableRipple>
+                ورود
+              </CustomButton>
+              <CustomButton variant="contained" disableRipple>
+                ثبت‌نام
+              </CustomButton>
+              </Paper>
+            </Toolbar>
+          </AppBar>
+        {/* </Box> */}
+      </div>
     </ThemeProvider>
   )
 }

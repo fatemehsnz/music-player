@@ -1,7 +1,6 @@
 import { FindReplace, OtherHousesRounded, PlayArrowOutlined } from '@mui/icons-material'
 import { Box, Container, Divider, Icon, Link, Stack, Typography } from '@mui/material'
 import React from 'react'
-import logo from '../assests/logo.png'
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
 import styled from '@emotion/styled';
 import { createTheme, ThemeProvider } from "@mui/material";
@@ -47,20 +46,7 @@ const itemText = {
 const Rightbar = () => {
   return (
     <ThemeProvider theme={theme}>
-    <Box sx={{backgroundColor :'#0f0f0f' , height:'100vh'}}>
-      <Box  sx={{display:'flex',flexDirection:'column' ,alignItems:'center' ,pt:3, mb:5}}>
-      <Box
-            component="img"
-            sx={{
-              height: '70px'
-            }}
-            alt="Your logo."
-            src={logo}
-        />
-        <Typography sx={{fontSize:'1.2em' ,fontWeight:600,color:'white'}}>PLAYER</Typography>
-        <Typography sx={{fontSize:'0.5em' ,letterSpacing:2,fontWeight:300}}>music player</Typography>
-      </Box>
-      <Stack  sx={{alignItems:'flex-start'}}>
+      <Stack  sx={{backgroundColor :'#0f0f0f' , height:'100vh',alignItems:'flex-start',pt:6}}>
       <div>
             {menuItems.map((item) => (      
               // <Link key={item.name} to={`/${item.name}`} sx={{textDecoration: "none"}}>   
@@ -99,7 +85,6 @@ const Rightbar = () => {
       </Item> */}
       
       </Stack>
-    </Box>
     </ThemeProvider>
   )
 }
