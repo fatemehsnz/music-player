@@ -4,6 +4,7 @@ import React from 'react'
 import Leftbar from './Leftbar'
 import Rightbar from './Rightbar'
 import Content from './Content'
+import Header from './Header'
 import {Box} from '@mui/material'
 
 
@@ -17,7 +18,7 @@ function Home() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid2 container >
         <Grid2 sm={12}>
-          <div>xs</div>
+          <Header/>
         </Grid2>
         <Grid2 sm={9} xs={10} xl={9}>
           <Content/>

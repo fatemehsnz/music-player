@@ -3,7 +3,7 @@ import React from 'react'
 
 const Leftbar = () => {
   return (
-    <Container sx={{backgroundColor :'#111' , height:'100vh' , color: '#999999'}}>
+    <Container sx={{backgroundColor :'#111' , height:'100vh' }}>
       <div >
       </div>
     </Container>
