@@ -3,6 +3,7 @@ import { Box, Container, Divider, Icon, Link, Stack, Typography } from '@mui/mat
 import React from 'react'
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
 import styled from '@emotion/styled';
+import logo from '../assests/logo.png'
 import { createTheme, ThemeProvider } from "@mui/material";
 // import {theme} from '../theme'
 const theme = createTheme ()
@@ -18,7 +19,6 @@ const menuItems =[
 ] ;
 const Item = styled(Stack)(({ theme }) => ({
   display: { xs: 'none', sm: 'block' } ,
-  alignItem:'center',
   cursor:'pointer',
   color: '#999999',
   marginBottom :theme.spacing(3), 
@@ -29,6 +29,12 @@ const Item = styled(Stack)(({ theme }) => ({
   }
     
 }));
+const stack={
+  display:'flex',
+  alignItems:'center',
+  backgroundColor :'#1e1e1e',
+  pt:5
+}
 const icon ={
   ml:1 ,mr:2
 }
@@ -46,44 +52,27 @@ const itemText = {
 const Rightbar = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Stack  sx={{backgroundColor :'#0f0f0f' , height:'100vh',alignItems:'flex-start',pt:6}}>
-      <div>
+        <Stack  sx={stack}>
+          <Box
+                component="img"
+                sx={{
+                  height: '70px',
+                }}
+                alt="Your logo."
+                src={logo}
+          />
+          <Typography sx={{fontSize:'1.2em' ,fontWeight:600,color:'white'}}>PLAYER</Typography>
+          <Typography sx={{fontSize:'0.5em' ,letterSpacing:2,fontWeight:300,color:'white'}}>music player</Typography>
+        </Stack>
+        <Stack  sx={{...stack , alignItems:'flex-start', height:'100vh'}}>
             {menuItems.map((item) => (      
               // <Link key={item.name} to={`/${item.name}`} sx={{textDecoration: "none"}}>   
               <Item  key={item.name} direction='row'>
-                
                   <Icon sx={icon}>{item.icon}</Icon>
                   <Typography sx={itemText}>{item.name}</Typography>
-                
-                </Item>
+              </Item>
                 // </Link>
             ))}
-      </div>
-      {/* <Item direction='row'>
-        <OtherHousesRounded sx={icon}/>
-        <Typography sx={itemText}>صفحه اصلی</Typography>
-      </Item>
-      <Item direction='row'>
-        <FindReplace sx={icon}/>
-        <Typography sx={itemText}>جستجو</Typography>
-      </Item>
-      <Item direction='row'>
-        <PlayArrowOutlined sx={icon}/>
-        <Typography sx={itemText}>پخش آهنگ</Typography>
-      </Item>
-      <Item direction='row'>
-        <FavoriteBorderRoundedIcon sx={icon}/>
-        <Typography sx={itemText}>محبوب ترین ها</Typography>
-      </Item>
-      <Item direction='row'>
-        <OtherHousesRounded sx={icon}/>
-        <Typography sx={itemText}>لیست پخش منتخب</Typography>
-      </Item>
-      <Item direction='row'>
-        <OtherHousesRounded sx={icon}/>
-        <Typography sx={itemText}>آپلود آهنگ</Typography>
-      </Item> */}
-      
       </Stack>
     </ThemeProvider>
   )

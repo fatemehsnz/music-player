@@ -12,17 +12,12 @@ import Navbar from './Navbar'
 
 function Home() {
   return (
-    <div>
-    <Header/> 
     <Grid2 container>
       <Grid2 sm={1.6} xl={1.4} sx={{display : {xs: 'none',sm:'block'}}}>
         <Rightbar/>
       </Grid2>
-      <Grid2 sm={7.4} xl={7.6}>
+      <Grid2 sm={10.4} xl={10.6}>
         <Content/>
-      </Grid2>
-      <Grid2 sm={3} >
-        <Leftbar/>
       </Grid2>
       {/* <Box sx={{ flexGrow: 1 }}>
         <Grid2 container >
@@ -38,7 +33,6 @@ function Home() {
         </Grid2>
       </Box> */}
     </Grid2>
-  </div>
   )
 }
 

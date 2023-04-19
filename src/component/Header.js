@@ -4,7 +4,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import { createTheme, ThemeProvider } from "@mui/material";
 import TuneIcon from '@mui/icons-material/Tune';
 import { styled } from '@mui/material/styles';
-import logo from '../assests/logo.png'
 const theme = createTheme ()
 
 
@@ -14,11 +13,12 @@ const paper ={
     alignItems: 'center',
     justifyContent:'space-between',
     height : 55,
-    width : 1000,
-    backgroundColor:'#0f0f0f',
+    maxWidth : 950,
+    width: '100%',
+    backgroundColor:'#1e1e1e',
     borderRadius : 3,
-    mt: 2,mb:2,
-    mr:10,
+    mr:5,
+    pl:1.5,pr:1.5,
     // p: '2px 10px',
     color: 'white',
 
@@ -47,12 +47,12 @@ const CustomButton = styled(Button)(({ theme }) => ({
 }));
 
 const chip ={
-    fontFamily:'msi',color:'white',backgroundColor:'#202020',
+    fontFamily:'msi',color:'white',backgroundColor:'#2a2a2a',
     width:65,
     ml:1.5
 }
 const filter={
-  fontFamily:'msi',color:'white',backgroundColor:'#0f0f0f','.css-6od3lo-MuiChip-label':{padding:0}
+  fontFamily:'msi',color:'white',backgroundColor:'#1e1e1e','.css-6od3lo-MuiChip-label':{padding:0}
 }
 const Header = () => {
   return (
@@ -60,20 +60,9 @@ const Header = () => {
       <div>
         {/* <Box sx={{ display: 'flex' }}> */}
           {/* <CssBaseline /> */}
-          <AppBar component="nav" position='sticky' sx={{}}>
-            <Toolbar sx={{backgroundColor :'#111', color:'white'}}>
-              <Box  sx={{display:'flex',flexDirection:'column' ,alignItems:'center' ,pt:3, mr:2}}>
-                <Box
-                      component="img"
-                      sx={{
-                        height: '70px'
-                      }}
-                      alt="Your logo."
-                      src={logo}
-                />
-                <Typography sx={{fontSize:'1.2em' ,fontWeight:600,color:'white'}}>PLAYER</Typography>
-                <Typography sx={{fontSize:'0.5em' ,letterSpacing:2,fontWeight:300}}>music player</Typography>
-              </Box>
+          {/* <AppBar component="nav" position='sticky' sx={{}}> */}
+            <Toolbar sx={{pt:6}}>
+            {/* <Stack sx={{display:'flex' , flexDirection:'row' ,alignItems: 'center',}}> */}
               <Paper sx={paper}>
                 <Stack flexDirection='row' alignItems='center'>
                   <SearchIcon sx={{ml:1}}/>
@@ -87,7 +76,7 @@ const Header = () => {
                   <Chip clickable sx={filter} icon={<TuneIcon sx={{'&.MuiChip-icon':{color:'white', mr:1,}}}/> }  label="فیلتر" />
                 </Stack>
               </Paper>
-              <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width : 200,color: 'white',mr:20}}>
+              <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width:'100%',maxWidth:200,color: 'white',mr:20}}>
               <CustomButton variant="contained" disableRipple>
                 ورود
               </CustomButton>
@@ -95,8 +84,10 @@ const Header = () => {
                 ثبت‌نام
               </CustomButton>
               </Paper>
+            {/* </Stack>   */}
+
             </Toolbar>
-          </AppBar>
+          {/* // </AppBar> */}
         {/* </Box> */}
       </div>
     </ThemeProvider>
