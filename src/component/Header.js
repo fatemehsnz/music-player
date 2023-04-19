@@ -61,7 +61,7 @@ const Header = () => {
         {/* <Box sx={{ display: 'flex' }}> */}
           {/* <CssBaseline /> */}
           {/* <AppBar component="nav" position='sticky' sx={{}}> */}
-            <Toolbar sx={{pt:6}}>
+            <Toolbar sx={{pt:3}}>
             {/* <Stack sx={{display:'flex' , flexDirection:'row' ,alignItems: 'center',}}> */}
               <Paper sx={paper}>
                 <Stack flexDirection='row' alignItems='center'>
@@ -76,13 +76,13 @@ const Header = () => {
                   <Chip clickable sx={filter} icon={<TuneIcon sx={{'&.MuiChip-icon':{color:'white', mr:1,}}}/> }  label="فیلتر" />
                 </Stack>
               </Paper>
-              <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width:'100%',maxWidth:200,color: 'white',mr:20}}>
-              <CustomButton variant="contained" disableRipple>
-                ورود
-              </CustomButton>
-              <CustomButton variant="contained" disableRipple>
-                ثبت‌نام
-              </CustomButton>
+              <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width:'100%',maxWidth:200,color: 'white',mr:24}}>
+                <CustomButton variant="contained" disableRipple>
+                  ورود
+                </CustomButton>
+                <CustomButton variant="contained" disableRipple>
+                  ثبت‌نام
+                </CustomButton>
               </Paper>
             {/* </Stack>   */}
 

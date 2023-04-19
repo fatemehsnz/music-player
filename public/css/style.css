@@ -13,4 +13,6 @@ body{
     direction: rtl;
     text-align: right;
     font-family: 'msi';
+    padding: 0;
+    margin: 0;
 }
