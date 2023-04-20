@@ -6,12 +6,12 @@ const MusicItem = (props) => {
     <div>
         <Box
             component="img"
-            sx={{height: '170px',borderRadius:4}}
+            sx={{width: '90%',borderRadius:4}}
             alt="cover"
             src={props.music.img}
         />
-        <Typography sx={{fontSize:'1.2em' ,fontWeight:500,color:'white'}}>{props.music.name}</Typography>
-        <Typography sx={{fontSize:'0.8em' ,fontWeight:300,color:'#999999'}}>{props.music.singer}</Typography>
+        <Typography  sx={{fontSize:'1.3em' ,fontWeight:500,color:'white'}}>{props.music.name}</Typography>
+        <Typography  sx={{fontSize:'0.9em' ,fontWeight:300,color:'#999999'}}>{props.music.singer}</Typography>
     </div>
   )
 }

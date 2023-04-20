@@ -5,8 +5,21 @@ import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded
 import styled from '@emotion/styled';
 import logo from '../assests/logo.png'
 import { createTheme, ThemeProvider } from "@mui/material";
-// import {theme} from '../theme'
-const theme = createTheme ()
+// import theme from '../theme'
+const theme = createTheme ({
+  typography: {
+    fontFamily: 'msi'
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1200,
+      xl: 1536,
+    }
+  },
+})
 
 const menuItems =[
   {name : 'صفحه اصلی', icon : <OtherHousesRounded/>},
@@ -18,7 +31,6 @@ const menuItems =[
 
 ] ;
 const Item = styled(Stack)(({ theme }) => ({
-  display: { xs: 'none', sm: 'block' } ,
   cursor:'pointer',
   color: '#999999',
   marginBottom :theme.spacing(3), 
@@ -29,17 +41,20 @@ const Item = styled(Stack)(({ theme }) => ({
   }
     
 }));
+
+const box ={
+  display: { xs:'none',sm: 'none', md: 'block' },
+  bgcolor:'#1e1e1e',
+  height:'100vh',
+}
 const stack={
-  display:'flex',
   alignItems:'center',
-  backgroundColor :'#1e1e1e',
-  pt:5
+  pt:5,
 }
 const icon ={
   ml:1 ,mr:2
 }
 const itemText = {
-  display: { xs: 'none', md: 'block' },
   mt : 0.2,
   fontSize : {
     md : '11px' , lg : '12px'
@@ -52,28 +67,32 @@ const itemText = {
 const Rightbar = () => {
   return (
     <ThemeProvider theme={theme}>
-        <Stack  sx={stack}>
-          <Box
-                component="img"
-                sx={{
-                  height: '70px',
-                }}
-                alt="Your logo."
-                src={logo}
-          />
-          <Typography sx={{fontSize:'1.2em' ,fontWeight:600,color:'white'}}>PLAYER</Typography>
-          <Typography sx={{fontSize:'0.5em' ,letterSpacing:2,fontWeight:300,color:'white'}}>music player</Typography>
-        </Stack>
-        <Stack  sx={{...stack , alignItems:'flex-start', height:'100vh'}}>
-            {menuItems.map((item) => (      
-              // <Link key={item.name} to={`/${item.name}`} sx={{textDecoration: "none"}}>   
-              <Item  key={item.name} direction='row'>
-                  <Icon sx={icon}>{item.icon}</Icon>
-                  <Typography sx={itemText}>{item.name}</Typography>
-              </Item>
-                // </Link>
-            ))}
-      </Stack>
+      <Box flex={1} sx={box}>
+        <Box position='fixed'>
+          <Stack  sx={stack}>
+            <Box
+                  component="img"
+                  sx={{
+                    height: '70px',
+                  }}
+                  alt="Your logo."
+                  src={logo}
+            />
+            <Typography sx={{fontSize:'1.2em' ,fontWeight:600,color:'white'}}>PLAYER</Typography>
+            <Typography sx={{fontSize:'0.5em' ,letterSpacing:2,fontWeight:300,color:'white'}}>music player</Typography>
+          </Stack>
+          <Stack  sx={{...stack , alignItems:'flex-start' }}>
+              {menuItems.map((item) => (      
+                // <Link key={item.name} to={`/${item.name}`} sx={{textDecoration: "none"}}>   
+                <Item  key={item.name} direction='row'>
+                    <Icon sx={icon}>{item.icon}</Icon>
+                    <Typography sx={itemText}>{item.name}</Typography>
+                </Item>
+                  // </Link>
+              ))}
+          </Stack>
+        </Box>
+      </Box>
     </ThemeProvider>
   )
 }

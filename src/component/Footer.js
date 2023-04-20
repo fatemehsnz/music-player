@@ -4,7 +4,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <div>
-    <BottomNavigation sx={{backgroundColor: 'red',width:'100vw'}}>
+    <BottomNavigation sx={{backgroundColor: 'yellow',width:'100vw', position:'fixed'}}>
 
     </BottomNavigation>
       

@@ -17,7 +17,7 @@ const paper ={
     width: '100%',
     backgroundColor:'#1e1e1e',
     borderRadius : 3,
-    mr:5,
+    mr:2,
     pl:1.5,pr:1.5,
     // p: '2px 10px',
     color: 'white',
@@ -57,18 +57,16 @@ const filter={
 const Header = () => {
   return (
     <ThemeProvider theme={theme}>
-      <div>
-        {/* <Box sx={{ display: 'flex' }}> */}
+      <Box>
           {/* <CssBaseline /> */}
           {/* <AppBar component="nav" position='sticky' sx={{}}> */}
-            <Toolbar sx={{pt:3}}>
-            {/* <Stack sx={{display:'flex' , flexDirection:'row' ,alignItems: 'center',}}> */}
+            <Toolbar sx={{ pt:3,pb:2 , bgcolor:'black',justifyContent:'space-between'}}>
               <Paper sx={paper}>
-                <Stack flexDirection='row' alignItems='center'>
+                <Stack direction='row' alignItems='center'>
                   <SearchIcon sx={{ml:1}}/>
                   <InputBase placeholder='جستجو...' sx={{fontFamily:'msi',fontSize:15,color:'white'}}></InputBase>
                 </Stack>
-                <Stack flexDirection='row' >
+                <Stack direction='row' >
                   <Chip clickable label='آواز' sx={chip}/>
                   <Chip clickable label="ایرانی" sx={chip}/>
                   <Chip clickable label="سنتی" sx={chip}/>
@@ -76,7 +74,7 @@ const Header = () => {
                   <Chip clickable sx={filter} icon={<TuneIcon sx={{'&.MuiChip-icon':{color:'white', mr:1,}}}/> }  label="فیلتر" />
                 </Stack>
               </Paper>
-              <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width:'100%',maxWidth:200,color: 'white',mr:24}}>
+              <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width:'100%',maxWidth:200,color: 'white',mr:5}}>
                 <CustomButton variant="contained" disableRipple>
                   ورود
                 </CustomButton>
@@ -84,12 +82,9 @@ const Header = () => {
                   ثبت‌نام
                 </CustomButton>
               </Paper>
-            {/* </Stack>   */}
-
             </Toolbar>
           {/* // </AppBar> */}
-        {/* </Box> */}
-      </div>
+      </Box>
     </ThemeProvider>
   )
 }
