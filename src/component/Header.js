@@ -59,7 +59,7 @@ const Header = () => {
     <ThemeProvider theme={theme}>
       <Box>
           {/* <CssBaseline /> */}
-          {/* <AppBar component="nav" position='sticky' sx={{}}> */}
+          <AppBar component="nav" position='sticky' sx={{}}>
             <Toolbar sx={{ pt:3,pb:2 , bgcolor:'black',justifyContent:'space-between'}}>
               <Paper sx={paper}>
                 <Stack direction='row' alignItems='center'>
@@ -74,7 +74,7 @@ const Header = () => {
                   <Chip clickable sx={filter} icon={<TuneIcon sx={{'&.MuiChip-icon':{color:'white', mr:1,}}}/> }  label="فیلتر" />
                 </Stack>
               </Paper>
-              <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width:'100%',maxWidth:200,color: 'white',mr:5}}>
+              <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width:'100%',maxWidth:200,color: 'white',mr:5,ml:5}}>
                 <CustomButton variant="contained" disableRipple>
                   ورود
                 </CustomButton>
@@ -83,7 +83,7 @@ const Header = () => {
                 </CustomButton>
               </Paper>
             </Toolbar>
-          {/* // </AppBar> */}
+           </AppBar>
       </Box>
     </ThemeProvider>
   )

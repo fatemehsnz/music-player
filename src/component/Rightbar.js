@@ -45,7 +45,9 @@ const Item = styled(Stack)(({ theme }) => ({
 const box ={
   display: { xs:'none',sm: 'none', md: 'block' },
   bgcolor:'#1e1e1e',
-  height:'100vh',
+  top:0,bottom:0,
+  maxWidth: 208,
+  width:'100%'
 }
 const stack={
   alignItems:'center',
