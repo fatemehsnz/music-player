@@ -1,8 +1,8 @@
-import { Box, Button, Divider, FormControl, InputBase, InputLabel, Stack, TextField, Typography } from '@mui/material'
+import { Box, Button, Divider, FormControl, InputBase, InputLabel, Stack, TextField, Typography, withTheme } from '@mui/material'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assests/logo.png'
-import SearchIcon from '@mui/icons-material/Search';
+import GoogleIcon from '@mui/icons-material/Google';
 
 const logocontainer ={
     alignItems:'center',
@@ -64,8 +64,8 @@ const Login = () => {
         }
     }
   return (
-    <Stack direction='row'>
-         <Box flex={1} bgcolor='#242424 '>
+    <Stack direction='row' bgcolor='#242424 ' sx={{height:'100vh'}}>
+         <Box flex={1}>
             <Stack sx={logocontainer}>
                 <Box
                         component="img"
@@ -79,19 +79,23 @@ const Login = () => {
                 <Typography sx={{fontSize:'0.5em' ,letterSpacing:2,fontWeight:300,color:'white', }}>music player</Typography>
             </Stack>
             <Box component="form" noValidate autoComplete="off" sx={{display:'flex',flexDirection:'column',alignItems:'center',mt:4}}>
-                <InputLabel sx={{fontSize:'0.9em',fontWeight:600,color :'white',mb:1}}>
+                <InputLabel sx={{fontSize:'0.9em',fontWeight:600,color :'white',mb:1,ml:27}}>
                     شماره همراه
                 </InputLabel>
                 <InputBase type='phone' placeholder='09*********' required sx={phoneInput}></InputBase>
                 <Button type='submit' variant="contained" sx={button}>ورود</Button>
                 <Typography sx={{color:'#959596'}}>حساب کاربری ندارید؟  <Link style={{color:'white',textDecoration: 'none',fontSize:13}} to="/signup">ثبت‌نام</Link></Typography>
                 <Divider variant="middle" sx={{borderColor:'#555556',width:290,mb:5,mt:5}}/>
-            </Box>
-            <Stack  sx={{alignItems:'center'}}>
-                <Button startIcon={<SearchIcon sx={{ml:1}}/>} component={Link} to={'/first'} variant="contained" 
+                <Button startIcon={<GoogleIcon sx={{ml:1}}/>} component={Link} to={'/first'} variant="contained" 
                 sx={{...button, bgcolor:'#363636',fontSize:12, '&:hover': {backgroundColor: '#363636'}}}>
                 ورود با حساب گوگل
                 </Button>
+            </Box>
+            <Stack  sx={{width:340,mr:5}}>
+                <ul style={{}}>
+                    <li style={{color:'#d5d5d5',fontSize:11}}>لورم ایپسون متن ساختگی با تولید سادگی</li>
+                    <li style={{color:'#d5d5d5',fontSize:11}}>لورم ایپسون متن ساختگی با تولید سادگی و لورم ایپسون متن ساختگی با </li>
+                </ul>
             </Stack>
         </Box>
         <Box flex={3} bgcolor='red'>
