@@ -75,10 +75,10 @@ const Header = () => {
                 </Stack>
               </Paper>
               <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width:'100%',maxWidth:200,color: 'white',mr:5,ml:5}}>
-                <CustomButton variant="contained" disableRipple>
+                <CustomButton variant="contained" href="./login" disableRipple>
                   ورود
                 </CustomButton>
-                <CustomButton variant="contained" disableRipple>
+                <CustomButton variant="contained" href="./signup" disableRipple>
                   ثبت‌نام
                 </CustomButton>
               </Paper>

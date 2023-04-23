@@ -3,18 +3,17 @@ import { Routes, Route } from "react-router"
 // import Navbar from "./component/Navbar";
 import Home from "./component/Home"
 import Login from "./component/Login";
+import Signup from "./component/Signup";
 
 
 const App = () => (
   <div>
     {/* <Navbar/> */}
-    <Login/>
     <Routes>
-      {/* <Route path="/" element={<Home/>}/> */}
-      {/* <Route path="/users" element={<Users/>}/>
-      <Route path="/:userId/places" element={<Places/>}/>
-      <Route path="/places" element={<Places/>}/>
-      <Route path="/my-place" element={<MyPlaces/>}/> */}
+      <Route path="/" element={<Home/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/signup" element={<Signup/>}/>
+      {/* <Route path="/:userId/places" element={<Places/>}/> */}
     </Routes>
   </div>
 );
