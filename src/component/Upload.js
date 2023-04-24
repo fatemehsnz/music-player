@@ -34,7 +34,7 @@ const Upload = () => {
                 </Stack>
                 <Stack pr={6}>
                   <Typography sx={{color:"white",fontSize:17,fontFamily:'msi'}}>بارگذاری آهنگ</Typography>
-                  <Paper sx={{mt:2,bgcolor:'#1d1d1d',height:300,maxWidth:1290,borderRadius:2,p:3}}>
+                  <Paper sx={{mt:2,bgcolor:'#1d1d1d',height:300,maxWidth:1290,borderRadius:2,p:3.5}}>
                     <Stack sx={{alignItems:'center',height:250,border:'0.1em dashed #404040'}}>
                       hi
                     </Stack>
