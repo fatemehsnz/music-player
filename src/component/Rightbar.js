@@ -1,10 +1,11 @@
 import { FindReplace, OtherHousesRounded, PlayArrowOutlined } from '@mui/icons-material'
-import { Box, Container, Divider, Icon, Link, Stack, Typography } from '@mui/material'
+import { Box, Container, Divider, Icon,Stack, Typography } from '@mui/material'
 import React from 'react'
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
 import styled from '@emotion/styled';
 import logo from '../assests/logo.png'
 import { createTheme, ThemeProvider } from "@mui/material";
+import { Link } from 'react-router-dom';
 // import theme from '../theme'
 const theme = createTheme ({
   typography: {
@@ -22,12 +23,12 @@ const theme = createTheme ({
 })
 
 const menuItems =[
-  {name : 'صفحه اصلی', icon : <OtherHousesRounded/>},
-  {name : 'جستجو', icon : <FindReplace/>},
-  {name : 'پخش آهنگ', icon : <PlayArrowOutlined/>},
-  // {name : 'محبوب ترین ها', icon : <FavoriteBorderRoundedIcon/>},
-  // {name : 'لیست پخش منتخب', icon : <FavoriteBorderRoundedIcon/>},
-  // {name : 'آپلود آهنگ', icon : <FavoriteBorderRoundedIcon/>},
+  {name : 'صفحه اصلی', icon : <OtherHousesRounded/> ,to:'./'},
+  {name : 'جستجو', icon : <FindReplace/>,to:'./'},
+  {name : 'پخش آهنگ', icon : <PlayArrowOutlined/> ,to:'./'},
+  {name : 'محبوب ترین ها', icon : <FavoriteBorderRoundedIcon/> ,to:'./'},
+  {name : 'لیست پخش منتخب', icon : <FavoriteBorderRoundedIcon/> ,to:'./'},
+  {name : 'آپلود آهنگ', icon : <FavoriteBorderRoundedIcon/> ,to:'./upload'},
 
 ] ;
 const Item = styled(Stack)(({ theme }) => ({
@@ -83,12 +84,12 @@ const Rightbar = () => {
           </Stack>
           <Stack  sx={{...stack , alignItems:'flex-start' }}>
               {menuItems.map((item) => (      
-                // <Link key={item.name} to={`/${item.name}`} sx={{textDecoration: "none"}}>   
-                <Item  key={item.name} direction='row'>
+                <Link key={item.name} to={`/${item.to}`} style={{textDecoration: "none"}}>   
+                <Item  direction='row'>
                     <Icon sx={icon}>{item.icon}</Icon>
                     <Typography sx={itemText}>{item.name}</Typography>
                 </Item>
-                  // </Link>
+                </Link>
               ))}
           </Stack>
         </Box>

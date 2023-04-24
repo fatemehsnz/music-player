@@ -86,11 +86,20 @@ const Login = () => {
                 <Button type='submit' variant="contained" sx={button}>ورود</Button>
                 <Typography sx={{color:'#959596'}}>حساب کاربری ندارید؟  <Link style={{color:'white',textDecoration: 'none',fontSize:13}} to="/signup">ثبت‌نام</Link></Typography>
                 <Divider variant="middle" sx={{borderColor:'#555556',width:290,mb:5,mt:5}}/>
-                <Button startIcon={<GoogleIcon sx={{ml:1}}/>} component={Link} to={'/first'} variant="contained" 
+                <Button startIcon={<GoogleIcon sx={{ml:1}}/>} href="" variant="contained" 
                 sx={{...button, bgcolor:'#363636',fontSize:12, '&:hover': {backgroundColor: '#363636'}}}>
                 ورود با حساب گوگل
                 </Button>
             </Box>
+            {/* <Box component="form" noValidate autoComplete="off" sx={{display:'flex',flexDirection:'column',alignItems:'center',mt:4}}>
+                <InputLabel sx={{fontSize:'1.1em',fontWeight:540,color :'white',mb:1,ml:27}}>
+                    کد تایید
+                </InputLabel>
+                <InputBase required sx={phoneInput}></InputBase>
+                <Button type='submit' variant="contained" sx={button}>تایید</Button>
+                <Typography ><Link style={{color:'white',textDecoration: 'none',fontSize:13}}>ارسال مجدد کد تایید</Link></Typography>
+                <Divider variant="middle" sx={{borderColor:'#555556',width:290,mb:5,mt:5}}/>
+            </Box> */}
             <Stack  sx={{width:340,mr:5}}>
                 <ul style={{}}>
                     <li style={{color:'#d5d5d5',fontSize:11}}>لورم ایپسون متن ساختگی با تولید سادگی</li>

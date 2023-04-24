@@ -10,20 +10,12 @@ import { Box, Stack } from '@mui/material'
 
 function Home() {
   return (
-    <Box>
-    {/* <Grid2 container>
-      <Grid2 sm={1.6} xl={1.4} sx={{display : {xs: 'none',sm:'block'}}}>
-        <Rightbar/>
-      </Grid2>
-      <Grid2 sm={10.4} xl={10.6}>
-        <Content/>
-      </Grid2>
-    </Grid2> */}
+    <Box >
     <Stack direction='row'>
       <Rightbar/>
       <Content/>
     </Stack>
-    {/* <Footer/> */}
+    <Footer/>
     </Box>
   )
 }

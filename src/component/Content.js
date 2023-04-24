@@ -27,10 +27,10 @@ const musicslist = {
 function Content() {
   return ( 
     <ThemeProvider theme={theme}>
-    <Box flex={7} >
+    <Box flex={7} sx={{ backgroundColor :'black'}}>
       <Header/> 
       <Stack direction='row'>
-        <Box flex={2.5} p={2} sx={{ backgroundColor :'black' }}>
+        <Box flex={2.5} p={2} >
           <Box sx={{maxWidth: 975 ,borderRadius:4,mr:3,mb:2}}>
             <Box
               component="img"
