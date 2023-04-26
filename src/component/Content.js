@@ -27,7 +27,7 @@ const musicslist = {
 function Content() {
   return ( 
     <ThemeProvider theme={theme}>
-    <Box flex={7} sx={{ backgroundColor :'black'}}>
+    <Box flex={1} sx={{ backgroundColor :'black'}}>
       <Header/> 
       <Stack direction='row'>
         <Box flex={2.5} p={2} >

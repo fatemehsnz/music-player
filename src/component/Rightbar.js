@@ -51,15 +51,14 @@ const box ={
 const stack={
   alignItems:'center',
   pt:5,
+  mr:2.5
 }
 const icon ={
   ml:1 ,mr:2
 }
 const itemText = {
   mt : 0.2,
-  fontSize : {
-    md : '11px' , lg : '12px'
-  },
+  fontSize : 12,
   fontWeight:{
     md : 700
   },
@@ -68,7 +67,7 @@ const itemText = {
 const Rightbar = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Box flex={1} sx={box}>
+      <Box width='190px' sx={box}>
         <Box position='fixed'>
           <Stack  sx={stack}>
             <Box
@@ -82,7 +81,7 @@ const Rightbar = () => {
             <Typography sx={{fontSize:'1.2em' ,fontWeight:600,color:'white'}}>PLAYER</Typography>
             <Typography sx={{fontSize:'0.5em' ,letterSpacing:2,fontWeight:300,color:'white'}}>music player</Typography>
           </Stack>
-          <Stack  sx={{...stack , alignItems:'flex-start' }}>
+          <Stack  sx={{...stack , alignItems:'flex-start',mr:0.8 }}>
               {menuItems.map((item) => (      
                 <Link key={item.name} to={`/${item.to}`} style={{textDecoration: "none"}}>   
                 <Item  direction='row'>
