@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Rightbar from './Rightbar'
 import Header from './Header'
-import { Box, Button, Card, CardMedia, Input, InputBase, Link, MenuItem, Paper, Select, Stack, Typography } from '@mui/material'
+import { Box, Button, Card, CardActions, CardMedia, Input, InputBase, Link, MenuItem, Paper, Select, Stack, Typography } from '@mui/material'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import pic from '../assests/esharat.jpg'
@@ -16,6 +16,7 @@ const button ={
     boxShadow: 'none',
     borderBottom: '0.1em solid #ffab40',
   },
+ 
 };
 const uploadButton ={
   fontFamily:'msi',
@@ -140,11 +141,14 @@ const Upload = () => {
                           </Grid2>
                           <Grid2 xs={4.2}>
                             <Card sx={{maxWidth:425.5,maxHeight:304.5,width:'100%',height:'100%',borderRadius:4,bgcolor:'#292929'}}>
+                              <CardMedia  component='img' image={imageUrl} sx={{width:'25%',height:'36%',position:'absolute',borderRadius:4}} />
+                              <CardActions >
                               <input id='contained-button-file' type='file' accept='image/*' onChange={handleImageChange} style={{display:'none'}}/>
-                              <CardMedia  component='img' image={imageUrl} sx={{width:'100%',height:'100%',position:'relative'}} />
                               <label htmlFor='contained-button-file' >
-                                  <Button variant="contained" component='span' sx={{position:'absolute'}}>بارگذاری عکس</Button>
+                                  <Button variant="contained" component='span'
+                                  sx={{position:'relative',width:425.5,bgcolor:'transparent',':hover':{bgcolor:'transparent'}}}>بارگذاری عکس</Button>
                               </label>
+                              </CardActions>
                             </Card>
                           </Grid2>
                         </Grid2>
