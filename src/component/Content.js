@@ -66,7 +66,6 @@ function Content() {
         </Box>
         <Box flex={1} p={3} sx={{ backgroundColor :'black' }}> 
           <Leftbar/>
-          hi
         </Box>
       </Stack>
     </Box>

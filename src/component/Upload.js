@@ -72,7 +72,7 @@ const Upload = () => {
             <Rightbar/>
             <Box flex={1}  sx={{ backgroundColor :'black' , height: upload==='upload' ? '100vh' :'none' }}>
                 <Header/> 
-                <Stack direction='row' p={5}>
+                <Stack  direction='row' p={5} >
                   <Button component={Link} sx={button} onClick={()=>{setUpload('upload')}}>
                     بارگذاری آهنگ
                   </Button>
@@ -108,7 +108,7 @@ const Upload = () => {
                     <Stack>
                       <Box sx={{ flexGrow: 1 }}>
                         <Grid2 container columnSpacing={5}>
-                          <Grid2 container  xs={7.5} sx={{justifyContent:'space-between'}}>
+                          <Grid2 container rowSpacing={4.5} xs={7.8} sx={{justifyContent:'space-between'}}>
                             <Grid2 xs={6}>
                               <Typography sx={{color:"white",fontSize:13,fontFamily:'msi'}}>نام آهنگ</Typography>
                               <InputBase type='text' sx={infoInput}/>
@@ -138,14 +138,13 @@ const Upload = () => {
                             <InputBase type='text' sx={infoInput}/>
                             </Grid2>
                           </Grid2>
-                          <Grid2 xs={4.5} sx={{maxHeight:350}}>
-                            <Card sx={{maxHeight:350}}>
+                          <Grid2 xs={4.2}>
+                            <Card sx={{maxWidth:425.5,maxHeight:304.5,width:'100%',height:'100%',borderRadius:4,bgcolor:'#292929'}}>
                               <input id='contained-button-file' type='file' accept='image/*' onChange={handleImageChange} style={{display:'none'}}/>
+                              <CardMedia  component='img' image={imageUrl} sx={{width:'100%',height:'100%',position:'relative'}} />
                               <label htmlFor='contained-button-file' >
-                                  <Button variant="contained" component='span'>
-                                    بارگذاری عکس</Button>
-                                </label>
-                              <CardMedia  component='img' image={imageUrl} sx={{width:'95%',height:'86%',mt:1, borderRadius:4}} />
+                                  <Button variant="contained" component='span' sx={{position:'absolute'}}>بارگذاری عکس</Button>
+                              </label>
                             </Card>
                           </Grid2>
                         </Grid2>
