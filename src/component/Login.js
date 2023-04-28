@@ -82,7 +82,7 @@ const Login = () => {
                 <InputLabel sx={{fontSize:'0.9em',fontWeight:600,color :'white',mb:1,ml:27}}>
                     شماره همراه
                 </InputLabel>
-                <InputBase type='phone' placeholder='09*********' required sx={phoneInput}></InputBase>
+                <InputBase type='phone' placeholder='09xxxxxxxxx' required sx={phoneInput}></InputBase>
                 <Button type='submit' variant="contained" sx={button}>ورود</Button>
                 <Typography sx={{color:'#959596'}}>حساب کاربری ندارید؟  <Link style={{color:'white',textDecoration: 'none',fontSize:13}} to="/signup">ثبت‌نام</Link></Typography>
                 <Divider variant="middle" sx={{borderColor:'#555556',width:290,mb:5,mt:5}}/>

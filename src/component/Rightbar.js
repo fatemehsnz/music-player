@@ -34,10 +34,10 @@ const menuItems =[
 const Item = styled(Stack)(({ theme }) => ({
   cursor:'pointer',
   color: '#999999',
+  // marginRight:1, 
   marginBottom :theme.spacing(3), 
   ":hover" : {
-    borderRight: '0.13em solid #ffab40', marginRight: '1em',
-    marginX:'-1em' ,
+    borderRight: '0.15em solid #ffab40',
     color :'#ffab40',
   }
     
@@ -54,11 +54,11 @@ const stack={
   mr:2.5
 }
 const icon ={
-  ml:1 ,mr:2
+  ml:1 ,mr:1
 }
 const itemText = {
   mt : 0.2,
-  fontSize : 12,
+  fontSize : 13,
   fontWeight:{
     md : 700
   },
