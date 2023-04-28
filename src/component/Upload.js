@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Rightbar from './Rightbar'
 import Header from './Header'
-import { Box, Button, Input, InputBase, Link, MenuItem, Paper, Select, Stack, Typography } from '@mui/material'
+import { Box, Button, Card, CardMedia, Input, InputBase, Link, MenuItem, Paper, Select, Stack, Typography } from '@mui/material'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import pic from '../assests/esharat.jpg'
@@ -38,21 +38,6 @@ const inputFile ={
   alignItems:'center',justifyContent:'center',
   height:230,
   border:'0.1em dashed #404040',
-  'input[type="file"]::-webkit-file-upload-button':{
-    fontFamily:'msi',
-    // width: 250,
-    // height:1000,
-    borderRadius:1.5,
-    mt:2,
-    color:'white ',
-    backgroundColor:'#fe9743',
-    fontSize:14,
-    cursor:'pointer',
-    '&:hover': {
-        backgroundColor: '#fe9743',
-        // boxShadow: 'none',
-      },
-  },
 }
 const infoInput={
   color:'white',
@@ -69,6 +54,18 @@ const Upload = () => {
     //do something with the selected file
   }
   const [upload , setUpload] = useState('upload')
+  const [image , setImage] = useState(null)
+  const [imageUrl, setImageUrl] = useState('')
+
+  const handleImageChange = (e)=>{
+    const file = e.target.files[0]
+    const reader = new FileReader();
+    reader.onloadend = () =>{
+      setImageUrl(reader.result);
+    }
+    reader.readAsDataURL(file)
+    setImage(file)
+  }
   return (
     <Box >
         <Stack direction='row' >
@@ -87,17 +84,22 @@ const Upload = () => {
                 {upload==='upload'&& <Stack pr={6}>
                   <Typography sx={{color:"white",fontSize:17,fontFamily:'msi'}}>بارگذاری آهنگ</Typography>
                   <Paper sx={{mt:2,bgcolor:'#1d1d1d',height:270,maxWidth:1290,borderRadius:2,p:3.5}}>
-                    <Stack component={InputBase} type='file' inputProps={{style:{display:'none'},accept:'.jpg,.jpeg'}} sx={inputFile} onChange={handleFileSelected}
+                    <Stack sx={inputFile}>
+                      <input id='contained-button-file' type='file' accept='image/*' onChange={handleFileSelected} style={{...inputFile,display:'none'}}/>
+                      <Typography sx={{color:"white",fontSize:17,fontFamily:'msi'}}>کلیک کنید یا آهنگ خود را در این قسمت رها کنید</Typography>
+                      <label htmlFor='contained-button-file' >
+                        <Button variant="contained" sx={uploadButton} component='span'>آپلود آهنگ</Button>
+                      </label>
+                    </Stack>
+                    {/* <Stack sx={inputFile} component={InputBase} id='contained-button-file' type='file' accept='image/*' onChange={handleFileSelected}  inputProps={{style:{display:'none'},accept:'.jpg,.jpeg'}} 
                     endAdornment={
-                      <label htmlFor='contained-button-file' style={{backgroundColor:'white',width:500,height:200}}>
-                        <Button disabled={!selectedFile} variant="contained" sx={uploadButton}>
-                          آپلود آهنگ</Button>
+                      <label htmlFor='contained-button-file'>
+                        <Button component='span' variant="contained" sx={uploadButton} >آپلود آهنگ</Button>
                       </label>
                     }
                     >
                       <Typography sx={{color:"white",fontSize:17,fontFamily:'msi'}}>کلیک کنید یا آهنگ خود را در این قسمت رها کنید</Typography>
-                      <Button disabled={!selectedFile} variant="contained" sx={uploadButton}>آپلود آهنگ</Button>
-                    </Stack>
+                    </Stack> */}
                   </Paper>
                 </Stack>}
                 {upload==='info'&& <Stack pr={6} component="form">
@@ -137,14 +139,14 @@ const Upload = () => {
                             </Grid2>
                           </Grid2>
                           <Grid2 xs={4.5} sx={{maxHeight:350}}>
-                            {/* <Box sx={{width: 400,height:300 ,borderRadius:4}}> */}
-                              <Box
-                                component="img"
-                                sx={{width:'95%',height:'86%',mt:1, borderRadius:4}}
-                                alt="cover"
-                                src={pic}
-                              />
-                            {/* </Box> */}
+                            <Card sx={{maxHeight:350}}>
+                              <input id='contained-button-file' type='file' accept='image/*' onChange={handleImageChange} style={{display:'none'}}/>
+                              <label htmlFor='contained-button-file' >
+                                  <Button variant="contained" component='span'>
+                                    بارگذاری عکس</Button>
+                                </label>
+                              <CardMedia  component='img' image={imageUrl} sx={{width:'95%',height:'86%',mt:1, borderRadius:4}} />
+                            </Card>
                           </Grid2>
                         </Grid2>
                       </Box>
