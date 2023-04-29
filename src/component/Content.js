@@ -1,9 +1,9 @@
 import { Box, Paper, Stack, Toolbar, Typography,Button ,BottomNavigation, ThemeProvider, createTheme } from '@mui/material'
 import React from 'react'
 import Header from './Header'
-import img1 from '../assests/Masoud-Roohnikan-Dastband.jpg'
-import img2 from '../assests/eybi-nadare.jpg'
-import pic from '../assests/pic.jpg'
+import img1 from '../assets/Masoud-Roohnikan-Dastband.jpg'
+import img2 from '../assets/eybi-nadare.jpg'
+import pic from '../assets/pic.jpg'
 import MusicItem from './MusicItem'
 import Leftbar from './Leftbar';
 const theme = createTheme ()

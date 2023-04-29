@@ -4,7 +4,7 @@ import Header from './Header'
 import { Box, Button, Card, CardActions, CardMedia, Input, InputBase, Link, MenuItem, Paper, Select, Stack, Typography } from '@mui/material'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
-import pic from '../assests/esharat.jpg'
+import pic from '../assets/esharat.jpg'
 
 const button ={
   borderRadius:0,

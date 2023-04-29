@@ -1,7 +1,8 @@
 import { Box, Button, Divider, FormControl, InputBase, InputLabel, Stack, TextField, Typography, withTheme } from '@mui/material'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assests/logo.png'
+import logo from '../assets/logo.png'
+import back from '../assets/back.jpg'
 import GoogleIcon from '@mui/icons-material/Google';
 
 const logocontainer ={
@@ -87,7 +88,7 @@ const Login = () => {
                 <Typography sx={{color:'#959596'}}>حساب کاربری ندارید؟  <Link style={{color:'white',textDecoration: 'none',fontSize:13}} to="/signup">ثبت‌نام</Link></Typography>
                 <Divider variant="middle" sx={{borderColor:'#555556',width:290,mb:5,mt:5}}/>
                 <Button startIcon={<GoogleIcon sx={{ml:1}}/>} href="" variant="contained" 
-                sx={{...button, bgcolor:'#363636',fontSize:12, '&:hover': {backgroundColor: '#363636'}}}>
+                sx={{...button,mb:0, bgcolor:'#363636',fontSize:12, '&:hover': {backgroundColor: '#363636'}}}>
                 ورود با حساب گوگل
                 </Button>
             </Box>
@@ -100,15 +101,49 @@ const Login = () => {
                 <Typography ><Link style={{color:'white',textDecoration: 'none',fontSize:13}}>ارسال مجدد کد تایید</Link></Typography>
                 <Divider variant="middle" sx={{borderColor:'#555556',width:290,mb:5,mt:5}}/>
             </Box> */}
-            <Stack  sx={{width:340,mr:5}}>
-                <ul style={{}}>
-                    <li style={{color:'#d5d5d5',fontSize:11}}>لورم ایپسون متن ساختگی با تولید سادگی</li>
-                    <li style={{color:'#d5d5d5',fontSize:11}}>لورم ایپسون متن ساختگی با تولید سادگی و لورم ایپسون متن ساختگی با </li>
-                </ul>
+            <Stack direction='row' sx={{width:340,pr:5,justifyContent:'center',alignItems:'center'}}>
+                <Stack sx={{mr:3,justifyContent:'center',alignItems:'center'}}>
+                    {/* <ul style={{margin:0}}> */}
+                        <li style={{display:'flex',color:'#946826',height:30}}>
+                            <span style={{fontSize:'4rem'}}>.</span>
+                        </li>
+                        <li style={{display:'flex',color:'#946826'}}>
+                            <span style={{fontSize:'4rem'}}>.</span>
+                        </li>
+                    {/* </ul> */}
+                </Stack>
+                <Stack sx={{mt:6,mr:0.5,}}>
+                    <li style={{display:'flex',color:'#d5d5d5',fontSize:11.5}}>
+                        <span style={{}}>لورم ایپسون متن ساختگی با تولید سادگی</span>
+                    </li>
+                    <li style={{display:'flex',color:'#d5d5d5',fontSize:11.5,width:290}}>
+                        <span style={{marginTop:12}}>لورم ایپسون متن ساختگی با تولید سادگی و لورم ایپسون متن ساختگی با </span>
+                    </li>  
+                </Stack>
+                
             </Stack>
         </Box>
-        <Box flex={3} bgcolor='red'>
-            bye
+        <Box flex={3} >
+            {/* <Box
+            sx={{backgroundImage:'url("https://cdn4.vectorstock.com/i/1000x1000/30/53/colorful-music-background-vector-19343053.jpg")',
+            height:'100vh',backgroundSize:'cover',display:'flex',alignItems:'center',justifyContent:'center' ,color:'white'}}>
+            <Typography variant='h3' sx={{fontFamily:'msi'  }}>به آوالند خوش امدید.</Typography>
+            </Box> */}
+            <Box
+            sx={{backgroundImage:'url("https://cdn4.vectorstock.com/i/1000x1000/30/53/colorful-music-background-vector-19343053.jpg")',
+            height:'100vh',backgroundSize:'cover',filter:'blur(1px)'}}>
+            </Box>
+            <Box
+            sx={{position:'absolute',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',
+                zIndex:1,top:'50%',left:'50%',transform:'translate(-85%,-90%)',color:'white',
+                width:590}}
+            >
+                <Typography variant='h3' sx={{fontFamily:'msi',mb:5}}>به آوالند خوش امدید.</Typography>
+                <Typography variant='body'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</Typography>
+            </Box>
+            
+
+            
         </Box>
 
     </Stack>

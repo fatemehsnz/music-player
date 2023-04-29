@@ -3,7 +3,7 @@ import { Box, Container, Divider, Icon,Stack, Typography } from '@mui/material'
 import React from 'react'
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
 import styled from '@emotion/styled';
-import logo from '../assests/logo.png'
+import logo from '../assets/logo.png'
 import { createTheme, ThemeProvider } from "@mui/material";
 import { Link } from 'react-router-dom';
 // import theme from '../theme'
