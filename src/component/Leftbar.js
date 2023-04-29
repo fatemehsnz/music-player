@@ -1,7 +1,7 @@
 import { Box, Stack,Button, Typography, Paper } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import React from 'react'
-import neshan from '../assests/neshan.jpg'
+import neshan from '../assets/neshan.jpg'
 
 
 const CustomButton = styled(Button)(({ theme }) => ({
