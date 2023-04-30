@@ -55,7 +55,7 @@ function Content() {
               <Typography variant='span' sx={{width:'50%',fontSize:'1em',fontWeight:600,color:'white'}}>لیست‌پخش‌منتخب</Typography>
               <Typography variant='span' sx={{width:'50%',fontSize:'0.9em',fontWeight:600,color :'#ffab40',textAlign:'end'}}>مشاهده‌همه</Typography>
             </Stack>
-            <Stack direction='row' sx={{...musicslist, mb:5}}>
+            <Stack direction='row' sx={{...musicslist, mb:12}}>
               {musicList.map(music =>(
                 <Box key={music.id}>
                   <MusicItem music={music}/>

@@ -86,19 +86,18 @@ const Upload = () => {
                   <Typography sx={{color:"white",fontSize:17,fontFamily:'msi'}}>بارگذاری آهنگ</Typography>
                   <Paper sx={{mt:2,bgcolor:'#1d1d1d',height:270,maxWidth:1290,borderRadius:2,p:3.5}}>
                     <Stack sx={inputFile}>
-                      <input id='contained-button-file' type='file' accept='image/*' onChange={handleFileSelected} style={{...inputFile,display:'none'}}/>
                       <Typography sx={{color:"white",fontSize:17,fontFamily:'msi'}}>کلیک کنید یا آهنگ خود را در این قسمت رها کنید</Typography>
-                      <label htmlFor='contained-button-file' >
-                        <Button variant="contained" sx={uploadButton} component='span'>آپلود آهنگ</Button>
-                      </label>
+                      <Button variant="contained" component="label" sx={uploadButton}>
+                         آپلود آهنگ  
+                        <input hidden  multiple type="file" onChange={handleFileSelected}/>
+                      </Button>
                     </Stack>
-                    {/* <Stack sx={inputFile} component={InputBase} id='contained-button-file' type='file' accept='image/*' onChange={handleFileSelected}  inputProps={{style:{display:'none'},accept:'.jpg,.jpeg'}} 
+                    {/* <Stack sx={inputFile} component={InputBase} id='contained-button-file' type='file'  onChange={handleFileSelected}  inputProps={{style:{display:'none'}}} 
                     endAdornment={
                       <label htmlFor='contained-button-file'>
                         <Button component='span' variant="contained" sx={uploadButton} >آپلود آهنگ</Button>
                       </label>
-                    }
-                    >
+                    }>
                       <Typography sx={{color:"white",fontSize:17,fontFamily:'msi'}}>کلیک کنید یا آهنگ خود را در این قسمت رها کنید</Typography>
                     </Stack> */}
                   </Paper>
@@ -143,11 +142,11 @@ const Upload = () => {
                             <Card sx={{maxWidth:425.5,maxHeight:304.5,width:'100%',height:'100%',borderRadius:4,bgcolor:'#292929'}}>
                               <CardMedia  component='img' image={imageUrl} sx={{width:'25%',height:'36%',position:'absolute',borderRadius:4}} />
                               <CardActions >
-                              <input id='contained-button-file' type='file' accept='image/*' onChange={handleImageChange} style={{display:'none'}}/>
-                              <label htmlFor='contained-button-file' >
-                                  <Button variant="contained" component='span'
-                                  sx={{position:'relative',width:425.5,bgcolor:'transparent',':hover':{bgcolor:'transparent'}}}>بارگذاری عکس</Button>
-                              </label>
+                                <Button variant="contained" component='label'
+                                  sx={{position:'relative',width:425.5,bgcolor:'transparent',':hover':{bgcolor:'transparent'}}}>
+                                  بارگذاری عکس  
+                                  <input hidden accept='image/*' multiple type="file" onChange={handleImageChange}/>
+                                </Button>
                               </CardActions>
                             </Card>
                           </Grid2>
