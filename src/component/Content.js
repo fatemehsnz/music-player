@@ -10,17 +10,18 @@ const theme = createTheme ()
 
 
 const musicList = [
-  {id: '1',name:'دستبند',singer:'روح نیکان', img:img2},
+  {id: '1',name:'دستبند',singer:'روح نیکان', img:img1},
   {id: '2',name:'دستبند',singer:'روح نیکان', img:img2},
-  {id: '3',name:'دستبند',singer:'روح نیکان', img:img2},
+  {id: '3',name:'دستبند',singer:'روح نیکان', img:img1},
   {id: '4',name:'دستبند',singer:'روح نیکان', img:img2},
   {id: '5',name:'دستبند',singer:'روح نیکان', img:img2},
 ]
 const musicslist = {
-  justifyContent:'space-between',
-  maxWidth: 940,
+  justifyContent:'space-around',
+  // maxWidth: 940,
   backgroundColor:'#1e1e1e' ,
-  borderRadius:4,mr:3,padding:2
+  borderRadius:4,mr:3,padding:2,
+  direction:'ltr'
 }
 
 
@@ -44,18 +45,18 @@ function Content() {
               <Typography variant='span' sx={{width:'50%',fontSize:'1em',fontWeight:600,color:'white'}}>جدید‌ترین آهنگ‌های‌این هفته</Typography>
               <Typography variant='span' sx={{width:'50%',fontSize:'0.9em',fontWeight:600,color :'#ffab40',textAlign:'end'}}>مشاهده‌همه</Typography>
             </Stack>
-            <Stack direction='row' sx={musicslist}>
+            <Stack direction='row' spacing={3} sx={musicslist} >
               {musicList.map(music =>(
-                <Box key={music.id}>
+                <div key={music.id} >
                   <MusicItem music={music}/>
-                </Box>
+                </div>
               ))}
             </Stack>
             <Stack direction='row' sx={{maxWidth:980,mr:3,mt:3}} > 
               <Typography variant='span' sx={{width:'50%',fontSize:'1em',fontWeight:600,color:'white'}}>لیست‌پخش‌منتخب</Typography>
               <Typography variant='span' sx={{width:'50%',fontSize:'0.9em',fontWeight:600,color :'#ffab40',textAlign:'end'}}>مشاهده‌همه</Typography>
             </Stack>
-            <Stack direction='row' sx={{...musicslist, mb:12}}>
+            <Stack direction='row' spacing={3} sx={{...musicslist, mb:12}}>
               {musicList.map(music =>(
                 <Box key={music.id}>
                   <MusicItem music={music}/>
