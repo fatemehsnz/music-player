@@ -3,6 +3,7 @@ import { AppBar, Box,Button,Chip,CssBaseline,Divider,InputBase, Paper, Stack, st
 import SearchIcon from '@mui/icons-material/Search';
 import TuneIcon from '@mui/icons-material/Tune';
 import { createTheme, ThemeProvider } from "@mui/material";
+import { Link } from 'react-router-dom';
 // import theme from '../theme'
 const theme = createTheme ({
   typography: {
@@ -88,12 +89,16 @@ const Header = () => {
                   </Stack>
                 </Paper>
                 <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#242424',borderRadius:4 ,width:'100%',maxWidth:200,color: 'white',mr:5,ml:5}}>
-                  <CustomButton variant="contained" href="./login" disableRipple>
-                    ورود
-                  </CustomButton>
-                  <CustomButton variant="contained" href="./signup" disableRipple>
-                    ثبت‌نام
-                  </CustomButton>
+                  <Link to={'./login'}>
+                    <CustomButton variant="contained" disableRipple>
+                      ورود
+                    </CustomButton>
+                  </Link>
+                  <Link to={'./signup'}>
+                    <CustomButton variant="contained" disableRipple>
+                      ثبت‌نام
+                    </CustomButton>
+                  </Link>
                 </Paper>
               // </Toolbar>
             </header>

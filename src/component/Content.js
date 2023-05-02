@@ -2,6 +2,7 @@ import { Box, Paper, Stack, Toolbar, Typography,Button ,BottomNavigation, ThemeP
 import React from 'react'
 import Header from './Header'
 import img1 from '../assets/Masoud-Roohnikan-Dastband.jpg'
+import img3 from '../assets/img3.jpg'
 import img2 from '../assets/eybi-nadare.jpg'
 import pic from '../assets/pic.jpg'
 import MusicItem from './MusicItem'
@@ -11,10 +12,10 @@ const theme = createTheme ()
 
 const musicList = [
   {id: '1',name:'دستبند',singer:'روح نیکان', img:img1},
-  {id: '2',name:'دستبند',singer:'روح نیکان', img:img2},
-  {id: '3',name:'دستبند',singer:'روح نیکان', img:img1},
-  {id: '4',name:'دستبند',singer:'روح نیکان', img:img2},
-  {id: '5',name:'دستبند',singer:'روح نیکان', img:img2},
+  {id: '2',name:'عیبی نداره',singer:'روح نیکان', img:img2},
+  {id: '3',name:'باطل',singer:'شادمهر عقیلی', img:img3},
+  {id: '4',name:'عیبی نداره',singer:'روح نیکان', img:img2},
+  {id: '5',name:'باطل',singer:'شادمهر عقیلی', img:img3},
 ]
 const musicslist = {
   justifyContent:'space-around',
