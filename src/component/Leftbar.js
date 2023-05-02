@@ -8,8 +8,10 @@ const CustomButton = styled(Button)(({ theme }) => ({
   boxShadow: 'none',
   fontSize: 16,
   borderRadius: 16,  //theme.shape.borderRadius
-  width : 165,
-  height : 55,
+  // maxWidth : 165,
+  // maxHeight : 55,
+  width:'50%',
+  height:'100%',
   backgroundColor: '#1e1e1e',
   fontFamily:'msi',
   fontSize:13,
@@ -26,6 +28,15 @@ const CustomButton = styled(Button)(({ theme }) => ({
     backgroundColor: '#fe9743',
   },
 }));
+
+const musicslist = {
+  justifyContent:'space-around',
+  // maxWidth: 940,
+  backgroundColor:'#1e1e1e' ,
+  borderRadius:4,mr:3,padding:2,
+  direction:'ltr'
+}
+
 const Leftbar = () => {
   return (
     <div>
@@ -40,7 +51,7 @@ const Leftbar = () => {
         <Typography sx={{fontSize:'190%' ,fontWeight:600,color:'white'}}>65000 تومان</Typography>
         <Typography sx={{fontSize:'0.8em' ,fontWeight:300,color:'#999999',textAlign:'center'}}>لورم ایپسوم متن ساختگی با تولید<br/> سادگی نامفهوم از صنعت چاپ <br/>و با استفاده از طراحان گرافیک است.</Typography>
       </Stack>
-      {/* <Stack>
+      <Stack>
         <Paper sx={{display: 'flex',alignItems: 'center',height : 55,backgroundColor:'#1e1e1e',borderRadius:4,maxWidth:300,color: 'white',mt:5}}>
           <CustomButton variant="contained" disableRipple>
             تاریخچه‌پخش
@@ -52,7 +63,7 @@ const Leftbar = () => {
         <Stack sx={{maxWidth: 300,backgroundColor:'#1e1e1e' ,borderRadius:4,maxHeight:500,mt:5,mb:5}}>
           hi
         </Stack>
-      </Stack> */}
+      </Stack>
     </div>
   )
 }
