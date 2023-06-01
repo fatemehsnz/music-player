@@ -1,12 +1,25 @@
-import { Box, Stack,Button, Typography, Paper } from '@mui/material'
+import { Box, Stack,Button, Typography, Paper, List, ListItemButton } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import React from 'react'
 import neshan from '../assets/neshan.jpg'
+import img1 from '../assets/Masoud-Roohnikan-Dastband.jpg'
+import img3 from '../assets/img3.jpg'
+import img2 from '../assets/eybi-nadare.jpg'
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
+import CommentRoundedIcon from '@mui/icons-material/CommentRounded';
 
+
+const musicList = [
+  {id: '1',name:'دستبند',singer:'روح نیکان', img:img1},
+  {id: '2',name:'عیبی نداره',singer:'روح نیکان', img:img2},
+  {id: '3',name:'باطل',singer:'شادمهر عقیلی', img:img3},
+  {id: '4',name:'عیبی نداره',singer:'روح نیکان', img:img2},
+  {id: '5',name:'باطل',singer:'شادمهر عقیلی', img:img3},
+]
 
 const CustomButton = styled(Button)(({ theme }) => ({
   boxShadow: 'none',
-  fontSize: 16,
   borderRadius: 16,  //theme.shape.borderRadius
   // maxWidth : 165,
   // maxHeight : 55,
@@ -29,18 +42,10 @@ const CustomButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const musicslist = {
-  justifyContent:'space-around',
-  // maxWidth: 940,
-  backgroundColor:'#1e1e1e' ,
-  borderRadius:4,mr:3,padding:2,
-  direction:'ltr'
-}
-
 const Leftbar = () => {
   return (
     <div>
-      <Stack sx={{maxWidth: 300,backgroundColor:'#1e1e1e' ,borderRadius:4,height:309,alignItems:'center',justifyContent:'center',mt:2.5}}>
+      <Stack sx={{maxWidth: 335,backgroundColor:'#1e1e1e' ,borderRadius:4,height:309,alignItems:'center',justifyContent:'center',mt:2.5}}>
         <Box
             component="img"
             sx={{width: '30%',mb:2}}
@@ -60,8 +65,34 @@ const Leftbar = () => {
             محبوب‌ترین‌آهنگ‌ها
           </CustomButton>
         </Paper>
-        <Stack sx={{maxWidth: 300,backgroundColor:'#1e1e1e' ,borderRadius:4,maxHeight:500,mt:5,mb:5}}>
-          hi
+        <Stack sx={{maxWidth: 320,backgroundColor:'#1e1e1e' ,borderRadius:4,maxHeight:500,mt:5,mb:5,p:1}}>
+          <List>
+            <ListItemButton>
+                <Box
+                    component="img"
+                    sx={{maxHeight: 56,height:'100%',borderRadius:3,}}
+                    alt="cover"
+                    src={img3}
+                />
+                <Stack spacing={2} sx={{pr:2,alignItems:'flex-start'}}>
+                  <Typography  sx={{fontSize:'0.9em',fontFamily:'msi' ,fontWeight:500,color:'white'}}>باطل</Typography>
+                  <Stack direction='row' alignItems='center'>
+                    <Stack direction='row' spacing={2} >
+                      <FavoriteRoundedIcon sx={{color:'white',fontSize:15,pl:0.5}}/>
+                      <Typography  sx={{fontSize:'0.7em',fontFamily:'msi' ,fontWeight:300,color:'#999999'}}>2,982</Typography>
+                    </Stack>
+                    <Stack direction='row' spacing={2} alignItems='center'>
+                      <PlayArrowRoundedIcon sx={{color:'white',fontSize:20,pl:0.5}}/>
+                      <Typography  sx={{fontSize:'0.7em',fontFamily:'msi' ,fontWeight:300,color:'#999999'}}>157 هزار</Typography>
+                    </Stack>
+                    <Stack direction='row' alignItems='center'>
+                      <CommentRoundedIcon sx={{color:'white',fontSize:14,pl:0.5}}/>
+                      <Typography  sx={{fontSize:'0.7em',fontFamily:'msi' ,fontWeight:300,color:'#999999'}}>2,982</Typography>
+                    </Stack>
+                  </Stack>
+                </Stack>
+            </ListItemButton>
+          </List>
         </Stack>
       </Stack>
     </div>
