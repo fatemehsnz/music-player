@@ -19,7 +19,7 @@ const musicList = [
 ]
 const musicslist = {
   justifyContent:'space-around',
-  // maxWidth: 940,
+  maxWidth: 940,
   backgroundColor:'#1e1e1e' ,
   borderRadius:4,mr:3,padding:2,
   direction:'ltr'

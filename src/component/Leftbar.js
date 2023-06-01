@@ -16,6 +16,9 @@ const musicList = [
   {id: '3',name:'باطل',singer:'شادمهر عقیلی', img:img3},
   {id: '4',name:'عیبی نداره',singer:'روح نیکان', img:img2},
   {id: '5',name:'باطل',singer:'شادمهر عقیلی', img:img3},
+  {id: '1',name:'دستبند',singer:'روح نیکان', img:img1},
+  {id: '1',name:'دستبند',singer:'روح نیکان', img:img1},
+
 ]
 
 const CustomButton = styled(Button)(({ theme }) => ({
@@ -42,6 +45,37 @@ const CustomButton = styled(Button)(({ theme }) => ({
   },
 }));
 
+const musicsList = {
+  mb:2,
+  borderRadius:3,
+  // '&:hover': {
+  //   backgroundColor: 'inherit',
+  //   boxShadow: 'none',
+  // },
+  '&:active': {
+    boxShadow: 'none',
+    backgroundColor: '#2a2a2a',
+  },
+  '&:focus': {
+    boxShadow: 'none',
+    backgroundColor: '#2a2a2a',
+  },
+}
+const title ={
+  fontSize:'0.9em',fontFamily:'msi' ,fontWeight:500,
+  color:'white',
+  '&:hover': {
+    color: '#fe9743',
+    boxShadow: 'none',
+  },
+  '&:active': {
+    color: '#fe9743',
+  },
+  '&:focus': {
+    color: '#fe9743',
+  },
+}
+
 const Leftbar = () => {
   return (
     <div>
@@ -65,17 +99,18 @@ const Leftbar = () => {
             محبوب‌ترین‌آهنگ‌ها
           </CustomButton>
         </Paper>
-        <Stack sx={{maxWidth: 320,backgroundColor:'#1e1e1e' ,borderRadius:4,maxHeight:500,mt:5,mb:5,p:1}}>
-          <List>
-            <ListItemButton>
+        <Stack sx={{maxWidth: 320,backgroundColor:'#1e1e1e' ,borderRadius:4,maxHeight:447,mt:5,mb:5,p:1}}>
+          <List sx={{position: 'relative', overflow: 'auto',}}>
+            {musicList.map(music =>(
+              <ListItemButton key={music.id} sx={musicsList}>
                 <Box
-                    component="img"
-                    sx={{maxHeight: 56,height:'100%',borderRadius:3,}}
-                    alt="cover"
-                    src={img3}
+                  component="img"
+                  sx={{maxHeight: 56,height:'100%',borderRadius:3,}}
+                  alt="cover"
+                  src={music.img}
                 />
                 <Stack spacing={2} sx={{pr:2,alignItems:'flex-start'}}>
-                  <Typography  sx={{fontSize:'0.9em',fontFamily:'msi' ,fontWeight:500,color:'white'}}>باطل</Typography>
+                  <Typography  sx={title}>{music.name}</Typography>
                   <Stack direction='row' alignItems='center'>
                     <Stack direction='row' spacing={2} >
                       <FavoriteRoundedIcon sx={{color:'white',fontSize:15,pl:0.5}}/>
@@ -91,7 +126,8 @@ const Leftbar = () => {
                     </Stack>
                   </Stack>
                 </Stack>
-            </ListItemButton>
+              </ListItemButton>
+            ))}
           </List>
         </Stack>
       </Stack>
